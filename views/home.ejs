@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="home.css">
+    <script defer src="https://kit.fontawesome.com/acafe4ef8e.js" crossorigin="anonymous"></script>
+    <script defer src="home.js"></script>
+    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    <div id="cards">
+        <% places.forEach(place=> { %>
+
+
+            <div class="center">
+                <a href="<%= place.link %>">
+                    <div class="content" id="<%= place._id %>">
+                        <img src="<%= place.imageLink %>" alt="<%= place.name %>" style="width:100%">
+                        <h3>
+                            <%= place.name %>
+                        </h3>
+                        <p>
+                            <%= place.description %>
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            
+            <% }); %>
+    </div>
+</body>
+
+</html>
